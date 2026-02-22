@@ -1,0 +1,16 @@
+# rust docs
+**/index.html
+
+# Rust build artifacts
+**/target/
+
+# Cargo lock file
+**/Cargo.lock
+
+**.swp
+**.swo
+
+.DS_Store
+
+# OS files
+Thumbs.db
