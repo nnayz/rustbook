@@ -15,6 +15,35 @@ fn main() {
 
     // s.clear(); // this empties the String, making it equal to ""
     print!("The first word is: {}", fw);
+
+    let my_string = String::from("hello world");
+
+    let word = first_word(&my_string[0..6]);
+    let word = first_word(&my_string[..]);
+
+    let word = first_word(&my_string);
+
+    let my_string_literal = "hello world";
+
+    // `first_word` works on slices of string literals, whether partial or whole
+    //
+    let word = first_word(&my_string_literal[0..6]);
+    let word = first_word(&my_string_literal[..]);
+
+    // Because string literals *are* string slives already,
+    // this works too, without the slice syntax!
+    //
+    let word = first_word(my_string_literal);
+
+    println!("The word is {}", word);
+
+    // Other Slices
+
+    let a = [1, 2, 3, 4, 5];
+
+    let slice = &a[1..3];
+
+    assert_eq!(slice, &[2, 3]); // Slice has the type &[i32].
 }
 
 fn first_word(s: &str) -> &str {
