@@ -138,6 +138,13 @@ fn main() {
     // Returning values can also transfer ownership.
     //
     demonstration_2();
+
+    // The ownership of a variable follows the same pattern every time. Assigning a value to another variable moves it. When a variable that includes data on the heap goes out of scope, the value will be cleaned up by `drop` unless ownership of the data has been moved to another variable.
+    //
+    //
+    // Returning multiple values
+
+    demonstration_3();
 }
 
 fn demonstration_2() -> () {
@@ -149,6 +156,7 @@ fn demonstration_2() -> () {
 }
 
 fn gives_ownership() -> String {
+    print!("[gives_ownership]");
     let some_string = String::from("yours"); // comes into scope
 
     some_string // moves out to the calling function
@@ -156,6 +164,7 @@ fn gives_ownership() -> String {
 
 fn takes_and_gives_back(a_string: String) -> String {
     // a_string comes into scope
+    print!("[takes_and_gives_back]");
 
     a_string // returned and moves out to the calling function
 }
@@ -177,4 +186,18 @@ fn takes_ownership(some_string: String) -> () {
 
 fn makes_copy(some_integer: i32) -> () {
     println!("[makes_copy] {some_integer}");
+}
+
+fn demonstration_3() -> () {
+    let s1 = String::from("hello");
+
+    let (s2, len) = calculate_length(s1);
+
+    println!("THe length of '{s2}' is {len}.");
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len(); // len() returns the length of the String
+
+    (s, length)
 }
