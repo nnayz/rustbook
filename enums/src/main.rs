@@ -105,6 +105,27 @@ enum UsState {
     // Rest of the states
 }
 
+impl UsState {
+    fn existed_in(&self, year: u16) -> bool {
+        match self {
+            UsState::Alabama => year >= 1819,
+            UsState::Alaska => year >= 1959,
+        }
+    }
+}
+
+fn describe_state_quarter(coin: Coin) -> Option<String> {
+    if let Coin::Quarter(state) = coin {
+        if state.existed_in(1900) {
+            Some(format!("{state:?} is pretty old, for America!"))
+        } else {
+            Some(format!("{state:?} is relatively new."))
+        }
+    } else {
+        None
+    }
+}
+
 enum Coin {
     Penny,
     Nickel,
@@ -225,4 +246,36 @@ fn main() {
     if let Some(max) = config_max {
         println!("The maximum is configured to be {max}")
     }
+
+    /*
+     * Example
+     */
+    let state2 = UsState::Alabama;
+    println!("The state: {:?}", state2.existed_in(1900));
+
+    let coin = Coin::Quarter(state2);
+
+    describe_state_quarter(coin);
+
+    /*
+     * Rust also has a let...else syntax
+     */
+
+    fn describe_state_quarter_2(coin: Coin) -> Option<String> {
+        let Coin::Quarter(state) = coin else {
+            return None;
+        };
+
+        if state.existed_in(1900) {
+            Some(format!("{state:?} is pretty old, for America!"))
+        } else {
+            Some(format!("{state:?} is relatively new."))
+        }
+    }
+
+    let state = UsState::Alabama;
+    let coin = Coin::Quarter(state);
+
+    // Usage
+    describe_state_quarter_2(coin);
 }
