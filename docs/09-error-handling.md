@@ -5,7 +5,12 @@ Rust has no exceptions. Two paths:
 - **Recoverable**: something like “file not found”. Report it, retry, or propagate. Type: `Result<T, E>`.
 - **Unrecoverable**: a bug, like an out-of-bounds index. Macro: `panic!`.
 
-Crate: [`error_handling/`](../error_handling/).
+Crate: [`error_handling/`](../examples/09-error-handling/error_handling/). `File::open("hello.txt")` is relative to the current directory, so run it from the crate:
+
+```bash
+cd examples/09-error-handling/error_handling
+cargo run
+```
 
 ## `panic!`
 

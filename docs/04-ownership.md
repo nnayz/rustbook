@@ -23,7 +23,7 @@ Ownership exists to:
 2. There can only be one owner at a time.
 3. When the owner goes out of scope, the value is dropped.
 
-Crate: [`ownership/`](../ownership/).
+Crate: [`ownership/`](../examples/04-ownership/ownership/).
 
 ## `String` vs string literals
 
@@ -83,7 +83,7 @@ Returning a `(String, usize)` tuple is a way to give the string back along with 
 
 A reference is an address you can follow. It does not own the data. Creating one is **borrowing**.
 
-Crate: [`references_borrowing/`](../references_borrowing/).
+Crate: [`references_borrowing/`](../examples/04-ownership/references_borrowing/).
 
 ```rust
 fn calculate_length(s: &String) -> usize {
@@ -130,7 +130,7 @@ A function that returns a reference to its own local will not compile — that l
 
 A slice is a reference to a contiguous sequence. It does not own the data.
 
-Crate: [`slices/`](../slices/).
+Crate: [`slices/`](../examples/04-ownership/slices/).
 
 ```rust
 let s = String::from("hello world");

@@ -2,7 +2,7 @@
 
 A struct packages named fields into one type.
 
-Crates: [`structs/`](../structs/), [`methods/`](../methods/).
+Crates: [`structs/`](../examples/05-structs/structs/), [`methods/`](../examples/05-structs/methods/).
 
 ## Define and instantiate
 

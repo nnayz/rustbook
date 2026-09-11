@@ -2,7 +2,7 @@
 
 An enum defines a type by listing its variants.
 
-Crate: [`enums/`](../enums/).
+Crate: [`enums/`](../examples/06-enums/enums/).
 
 ## Define an enum
 

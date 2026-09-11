@@ -10,7 +10,7 @@ How a project is cut into pieces as it grows.
 
 If a package has both `src/main.rs` and `src/lib.rs`, it has two crates with the same package name. Extra binaries go in `src/bin/`.
 
-Notes also live in [`package_crates_modules/src/doc.md`](../package_crates_modules/src/doc.md). Crates: [`restaurant/`](../restaurant/) (library), [`backyard/`](../backyard/) (modules in files).
+Notes also live in [`package_crates_modules/src/doc.md`](../examples/07-packages-crates-modules/package_crates_modules/src/doc.md). Crates: [`restaurant/`](../examples/07-packages-crates-modules/restaurant/) (library), [`backyard/`](../examples/07-packages-crates-modules/backyard/) (modules in files).
 
 ## Module tree
 
@@ -87,4 +87,4 @@ backyard/src/
     vegetables.rs  // pub struct Asparagus
 ```
 
-See [`backyard/src/main.rs`](../backyard/src/main.rs).
+See [`backyard/src/main.rs`](../examples/07-packages-crates-modules/backyard/src/main.rs).

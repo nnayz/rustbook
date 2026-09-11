@@ -6,7 +6,7 @@ Heap-growing data structures from `std`.
 - **String**: owned UTF-8 text
 - **Hash map** `HashMap<K, V>`: keys to values
 
-Crate: [`collections/`](../collections/).
+Crate: [`collections/`](../examples/08-collections/collections/).
 
 ## Vectors
 
@@ -88,10 +88,10 @@ Default hasher is SipHash (DoS-resistant, not the fastest). Swap it by providing
 
 ## Exercises (from The Book)
 
-Package [`exercises/`](../exercises/) — three binaries in `src/bin/`:
+Package [`exercises/`](../examples/08-collections/exercises/) — three binaries in `src/bin/`:
 
 | Binary | Run | Exercise |
 |--------|-----|----------|
-| `mediam_mode` | `cargo run --bin mediam_mode` | Median and mode of a list of integers |
-| `pig_latin` | `cargo run --bin pig_latin` | Convert a word to pig latin (UTF-8-aware enough to use `.chars()`) |
-| `names_in_company` | `cargo run --bin names_in_company` | Add people to departments; list by department, sorted |
+| `mediam_mode` | `cargo run -p exercises --bin mediam_mode` | Median and mode of a list of integers |
+| `pig_latin` | `cargo run -p exercises --bin pig_latin` | Convert a word to pig latin (UTF-8-aware enough to use `.chars()`) |
+| `names_in_company` | `cargo run -p exercises --bin names_in_company` | Add people to departments; list by department, sorted |

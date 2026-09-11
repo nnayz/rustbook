@@ -1,16 +1,20 @@
-# rust docs
+# rustc rustdoc output
 **/index.html
 
 # Rust build artifacts
 **/target/
 
-# Cargo lock file
-**/Cargo.lock
+# rustc output for the getting-started example
+/main
+examples/01-getting-started/hello_world
+examples/01-getting-started/hello_world.dSYM/
+
+# Nested lockfiles; the workspace lockfile at repo root is kept
+examples/**/Cargo.lock
+rustlings/Cargo.lock
 
 **.swp
 **.swo
 
 .DS_Store
-
-# OS files
 Thumbs.db

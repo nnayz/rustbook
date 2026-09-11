@@ -2,11 +2,10 @@
 
 The program picks a random integer between 1 and 100. You guess. It says too small, too big, or you win.
 
-Working crate: [`guessing_game/`](../guessing_game/).
+Working crate: [`guessing_game/`](../examples/02-guessing-game/guessing_game/).
 
 ```bash
-cd guessing_game
-cargo run
+cargo run -p guessing_game
 ```
 
 ## Set it up
@@ -141,4 +140,4 @@ Invalid input is not a crash: the `Err` arm prints a hint and `continue`s to the
 
 ## Full program
 
-See [`guessing_game/src/main.rs`](../guessing_game/src/main.rs).
+See [`guessing_game/src/main.rs`](../examples/02-guessing-game/guessing_game/src/main.rs).

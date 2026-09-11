@@ -13,11 +13,12 @@ fn main() {
 Compile with `rustc`, then run the binary:
 
 ```bash
-rustc main.rs
-./main
+cd examples/01-getting-started
+rustc hello_world.rs
+./hello_world
 ```
 
-This repo has a root `main.rs` that does exactly that.
+[`hello_world.rs`](../examples/01-getting-started/hello_world.rs) is that program.
 
 ### Anatomy
 
@@ -42,7 +43,7 @@ cargo new hello_cargo
 cd hello_cargo
 ```
 
-This folder already exists: [`hello_cargo/`](../hello_cargo/).
+This folder already exists: [`hello_cargo/`](../examples/01-getting-started/hello_cargo/).
 
 Cargo generates `src/main.rs`, `Cargo.toml`, and a `.gitignore` if you asked for git (`--vcs=git`).
 
@@ -65,11 +66,17 @@ The first `cargo build` also writes `Cargo.lock`, which pins exact dependency ve
 
 `cargo run` is the usual loop. `cargo check` is faster when you only care that it compiles.
 
+In this repo the example crates share a workspace at the root, so from the repository root you can also run:
+
+```bash
+cargo run -p hello_cargo
+```
+
 Full Cargo docs: [doc.rust-lang.org/cargo](https://doc.rust-lang.org/cargo/).
 
 ## Code in this repo
 
 | Path | What it is |
 |------|------------|
-| [`main.rs`](../main.rs) | Hello world, compiled with `rustc` |
-| [`hello_cargo/`](../hello_cargo/) | Same program as a Cargo project |
+| [`hello_world.rs`](../examples/01-getting-started/hello_world.rs) | Hello world, compiled with `rustc` |
+| [`hello_cargo/`](../examples/01-getting-started/hello_cargo/) | Same program as a Cargo project |

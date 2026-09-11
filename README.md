@@ -2,7 +2,7 @@
 
 A short version of [The Rust Programming Language](https://doc.rust-lang.org/book/) ("The Book").
 
-Each chapter is a condensed note in `docs/` plus a working crate you can run. This is a companion, not a substitute: when a page here is thin, go back to The Book.
+Each chapter is a condensed note in `docs/` plus working crates under `examples/`. This is a companion, not a substitute: when a page here is thin, go back to The Book.
 
 Chapters 1–9 have notes. Later chapters are listed below so the path is visible; those files are not written yet.
 
@@ -10,9 +10,10 @@ Chapters 1–9 have notes. Later chapters are listed below so the path is visibl
 
 You need `rustc` and `cargo` ([install with rustup](https://rustup.rs/)).
 
+The example crates are a Cargo workspace. From the repo root:
+
 ```bash
-cd guessing_game
-cargo run
+cargo run -p guessing_game
 ```
 
 Read the note first, then open the crate. Comments in `src/main.rs` are the same ideas in situ.
@@ -21,15 +22,15 @@ Read the note first, then open the crate. Comments in `src/main.rs` are the same
 
 | # | Topic | Notes | Code |
 |---|--------|--------|------|
-| 1 | Getting Started | [01-getting-started.md](docs/01-getting-started.md) | [`hello_cargo/`](hello_cargo/), [`main.rs`](main.rs) |
-| 2 | Programming a Guessing Game | [02-guessing-game.md](docs/02-guessing-game.md) | [`guessing_game/`](guessing_game/) |
-| 3 | Common Programming Concepts | [03-common-concepts.md](docs/03-common-concepts.md) | [`variables/`](variables/), [`functions/`](functions/), [`control_flow/`](control_flow/) |
-| 4 | Understanding Ownership | [04-ownership.md](docs/04-ownership.md) | [`ownership/`](ownership/), [`references_borrowing/`](references_borrowing/), [`slices/`](slices/) |
-| 5 | Structs | [05-structs.md](docs/05-structs.md) | [`structs/`](structs/), [`methods/`](methods/) |
-| 6 | Enums and Pattern Matching | [06-enums.md](docs/06-enums.md) | [`enums/`](enums/) |
-| 7 | Packages, Crates, and Modules | [07-packages-crates-modules.md](docs/07-packages-crates-modules.md) | [`restaurant/`](restaurant/), [`backyard/`](backyard/), [`package_crates_modules/`](package_crates_modules/) |
-| 8 | Common Collections | [08-collections.md](docs/08-collections.md) | [`collections/`](collections/), [`exercises/`](exercises/) |
-| 9 | Error Handling | [09-error-handling.md](docs/09-error-handling.md) | [`error_handling/`](error_handling/) |
+| 1 | Getting Started | [01-getting-started.md](docs/01-getting-started.md) | [`examples/01-getting-started/`](examples/01-getting-started/) |
+| 2 | Programming a Guessing Game | [02-guessing-game.md](docs/02-guessing-game.md) | [`guessing_game`](examples/02-guessing-game/guessing_game/) |
+| 3 | Common Programming Concepts | [03-common-concepts.md](docs/03-common-concepts.md) | [`examples/03-common-concepts/`](examples/03-common-concepts/) |
+| 4 | Understanding Ownership | [04-ownership.md](docs/04-ownership.md) | [`examples/04-ownership/`](examples/04-ownership/) |
+| 5 | Structs | [05-structs.md](docs/05-structs.md) | [`examples/05-structs/`](examples/05-structs/) |
+| 6 | Enums and Pattern Matching | [06-enums.md](docs/06-enums.md) | [`enums`](examples/06-enums/enums/) |
+| 7 | Packages, Crates, and Modules | [07-packages-crates-modules.md](docs/07-packages-crates-modules.md) | [`examples/07-packages-crates-modules/`](examples/07-packages-crates-modules/) |
+| 8 | Common Collections | [08-collections.md](docs/08-collections.md) | [`examples/08-collections/`](examples/08-collections/) |
+| 9 | Error Handling | [09-error-handling.md](docs/09-error-handling.md) | [`error_handling`](examples/09-error-handling/error_handling/) |
 | 10 | Generic Types, Traits, and Lifetimes | [10-generics-traits-lifetimes.md](docs/10-generics-traits-lifetimes.md) — _not written yet_ | [`rustlings/`](rustlings/exercises/) `14_generics`, `15_traits`, `16_lifetimes`, `12_options` |
 | 11 | Writing Automated Tests | [11-testing.md](docs/11-testing.md) — _not written yet_ | [`rustlings/`](rustlings/exercises/) `17_tests` |
 | 12 | An I/O Project | [12-io-project.md](docs/12-io-project.md) — _not written yet_ | — |
@@ -52,67 +53,66 @@ The Book itself: [doc.rust-lang.org/book](https://doc.rust-lang.org/book/).
 `fn main`, `println!`, `rustc`, then Cargo (`cargo new`, `build`, `run`, `check`, `Cargo.toml`).
 
 - Notes: [docs/01-getting-started.md](docs/01-getting-started.md)
-- [`main.rs`](main.rs) — hello world via `rustc main.rs`
-- [`hello_cargo/`](hello_cargo/) — the same program as a Cargo project
+- [`hello_world.rs`](examples/01-getting-started/hello_world.rs) — hello world via `rustc`
+- [`hello_cargo/`](examples/01-getting-started/hello_cargo/) — the same program as a Cargo project (`cargo run -p hello_cargo`)
 
 ### 2. Programming a Guessing Game
 
 A first real program: stdin, `String`, `Result`/`expect`, the `rand` crate, `match`, shadowing, `loop`.
 
 - Notes: [docs/02-guessing-game.md](docs/02-guessing-game.md)
-- [`guessing_game/`](guessing_game/)
+- [`guessing_game/`](examples/02-guessing-game/guessing_game/) — `cargo run -p guessing_game`
 
 ### 3. Common Programming Concepts
 
 Mutability, shadowing, scalar and compound types, functions vs expressions, `if` / `loop` / `while` / `for`.
 
 - Notes: [docs/03-common-concepts.md](docs/03-common-concepts.md)
-- [`variables/`](variables/), [`functions/`](functions/), [`control_flow/`](control_flow/)
-- Book exercises: [`temperature/`](temperature/), [`fibonacci/`](fibonacci/), [`twelve_days/`](twelve_days/)
+- [`variables/`](examples/03-common-concepts/variables/), [`functions/`](examples/03-common-concepts/functions/), [`control_flow/`](examples/03-common-concepts/control_flow/)
+- Book exercises: [`temperature/`](examples/03-common-concepts/temperature/), [`fibonacci/`](examples/03-common-concepts/fibonacci/), [`twelve_days/`](examples/03-common-concepts/twelve_days/)
 
 ### 4. Understanding Ownership
 
 Stack vs heap, move / clone / copy, borrowing, slices (`&str`, `&[T]`).
 
 - Notes: [docs/04-ownership.md](docs/04-ownership.md)
-- [`ownership/`](ownership/), [`references_borrowing/`](references_borrowing/), [`slices/`](slices/)
+- [`ownership/`](examples/04-ownership/ownership/), [`references_borrowing/`](examples/04-ownership/references_borrowing/), [`slices/`](examples/04-ownership/slices/)
 
 ### 5. Structs
 
 Named fields, tuple structs, unit-like structs, `impl` methods, associated functions.
 
 - Notes: [docs/05-structs.md](docs/05-structs.md)
-- [`structs/`](structs/), [`methods/`](methods/)
+- [`structs/`](examples/05-structs/structs/), [`methods/`](examples/05-structs/methods/)
 
 ### 6. Enums and Pattern Matching
 
 Variants with data, `Option<T>`, exhaustive `match`, `if let`, `let...else`.
 
 - Notes: [docs/06-enums.md](docs/06-enums.md)
-- [`enums/`](enums/)
+- [`enums/`](examples/06-enums/enums/)
 
 ### 7. Packages, Crates, and Modules
 
 Package vs crate vs module, `pub`, paths, `use`, splitting modules into files.
 
 - Notes: [docs/07-packages-crates-modules.md](docs/07-packages-crates-modules.md)
-- [`restaurant/`](restaurant/) — module tree in a library crate
-- [`backyard/`](backyard/) — `mod` mapped to files
-- [`package_crates_modules/`](package_crates_modules/) — extra notes in `src/doc.md`
+- [`restaurant/`](examples/07-packages-crates-modules/restaurant/) — module tree in a library crate
+- [`backyard/`](examples/07-packages-crates-modules/backyard/) — `mod` mapped to files
+- [`package_crates_modules/`](examples/07-packages-crates-modules/package_crates_modules/) — extra notes in `src/doc.md`
 
 ### 8. Common Collections
 
 `Vec<T>`, `String` / UTF-8, `HashMap<K, V>`.
 
 - Notes: [docs/08-collections.md](docs/08-collections.md)
-- [`collections/`](collections/)
-- Book exercises in [`exercises/`](exercises/):
+- [`collections/`](examples/08-collections/collections/)
+- Book exercises in [`exercises/`](examples/08-collections/exercises/):
 
 ```bash
-cd exercises
-cargo run --bin mediam_mode        # median and mode
-cargo run --bin pig_latin          # pig latin
-cargo run --bin names_in_company   # departments
+cargo run -p exercises --bin mediam_mode        # median and mode
+cargo run -p exercises --bin pig_latin          # pig latin
+cargo run -p exercises --bin names_in_company   # departments
 ```
 
 ### 9. Error Handling
@@ -120,7 +120,7 @@ cargo run --bin names_in_company   # departments
 `panic!` vs `Result`, matching on `ErrorKind`.
 
 - Notes: [docs/09-error-handling.md](docs/09-error-handling.md)
-- [`error_handling/`](error_handling/)
+- [`error_handling/`](examples/09-error-handling/error_handling/)
 
 ### 10–21 (notes not written yet)
 
@@ -143,7 +143,7 @@ These files are the intended notes. Until they exist, The Book chapter and the r
 
 ## Extra practice: rustlings
 
-[`rustlings/`](rustlings/) is a local copy of the [rustlings](https://github.com/rust-lang/rustlings) exercises. Mapping to The Book is in [`rustlings/exercises/README.md`](rustlings/exercises/README.md).
+[`rustlings/`](rustlings/) is a local copy of the [rustlings](https://github.com/rust-lang/rustlings) exercises. Mapping to The Book is in [`rustlings/exercises/README.md`](rustlings/exercises/README.md). It is not part of the workspace.
 
 ```bash
 cd rustlings
@@ -155,16 +155,14 @@ Solutions sit next to the exercises under `rustlings/solutions/`.
 ## Layout
 
 ```
-docs/                  condensed notes, one file per Book chapter
-hello_cargo/ …         one Cargo project per topic (chapters 1–9)
-exercises/             chapter 8 binaries (median/mode, pig latin, company)
-rustlings/             extra drills, including chapters that have no notes yet
-main.rs                hello world, compiled with rustc
+docs/         condensed notes, one file per Book chapter
+examples/     crates for chapters 1–9, grouped by chapter
+rustlings/    extra drills, including chapters that have no notes yet
+Cargo.toml    workspace over examples/*/*
 ```
 
-Each crate:
+From the repo root:
 
 ```bash
-cd <crate>
-cargo run
+cargo run -p <package>
 ```

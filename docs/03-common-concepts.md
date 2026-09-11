@@ -27,7 +27,7 @@ let x = x + 1;
 println!("{x}"); // 6
 ```
 
-Crate: [`variables/`](../variables/).
+Crate: [`variables/`](../examples/03-common-concepts/variables/).
 
 ## Data types
 
@@ -95,7 +95,7 @@ fn sum(x: i32, y: i32) -> i32 {
 - A semicolon turns an expression into a statement (`x + y;` returns `()`).
 - `println!` is a macro that returns `()`.
 
-Crate: [`functions/`](../functions/).
+Crate: [`functions/`](../examples/03-common-concepts/functions/).
 
 ## Control flow
 
@@ -155,12 +155,12 @@ for number in (1..=4).rev() {
 
 `1..4` is `1, 2, 3`. `1..=4` includes `4`.
 
-Crate: [`control_flow/`](../control_flow/).
+Crate: [`control_flow/`](../examples/03-common-concepts/control_flow/).
 
 ## Exercises (from The Book)
 
 | Crate | Exercise |
 |-------|----------|
-| [`temperature/`](../temperature/) | Convert Fahrenheit ↔ Celsius |
-| [`fibonacci/`](../fibonacci/) | Generate Fibonacci numbers |
-| [`twelve_days/`](../twelve_days/) | Print *The Twelve Days of Christmas* |
+| [`temperature/`](../examples/03-common-concepts/temperature/) | Convert Fahrenheit ↔ Celsius |
+| [`fibonacci/`](../examples/03-common-concepts/fibonacci/) | Generate Fibonacci numbers |
+| [`twelve_days/`](../examples/03-common-concepts/twelve_days/) | Print *The Twelve Days of Christmas* |
