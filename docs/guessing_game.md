@@ -40,13 +40,36 @@ fn main() {
 ### Strong values with variables
 
 ```rust
-let mut guess = String::new(); # mutable
-let apples = 5 # immutable
+let mut guess = String::new(); // mutable
+let apples = 5 // immutable
 ```
 
 Variables are immutable by default i.e., the value does not change of a variable once given a value. However, we can make a variable mutable using the `mut` keyword.
 
+The `::` syntax in the `::new` line indicates that `new` is an associated function of the `String` type. The `associated function` is a function that's implemented on a type, in this case `String`. 
 
+This `new` function creates a new, empty string. 
+
+So basically, this line:
+
+```rust
+let mut guess = String::new();
+```
+
+created a mutable variable that is currently bound to new, empty instance of a `String`. 
+
+### Receiving User Input. 
+
+Now we use the `stdin` function from the `ìo` module. 
+
+```rust
+io::stdin()
+    .read_line(&mut guess)
+```
+
+We still could've used the functionality without `use` with `std::io::stdin`. This function returns an instance of the `std::io::Stdin`. 
+
+We are passing `&mut guess` as argument to read_line method to specify which string will the user input be stored in. 
 
 
 Check the [complete code](guessing_game/src/main.rs)
